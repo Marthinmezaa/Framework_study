@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado</title>
+</head>
+<body>
+    
+    <h1>Resultado</h1>
+
+    {% if age >= 18 %}
+        <p>Sos mayor de edad porque tenes {{ age }} años.</p>
+    {% else %}
+        <p>Sos menor de edad porque tenes {{ age }} años.</p>
+    {% endif %}
+
+    <a href="/edad">Volver</a>
+    
+</body>
+</html>

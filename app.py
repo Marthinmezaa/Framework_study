@@ -2,13 +2,18 @@ from flask import Flask, render_template, request, redirect, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('index.html', nombre="Marthin")
+@app.route('/edad', methods=['GET', 'POST'])
+def edad():
+    if request.method == 'POST':
+        print(request.form)
+        age = int(request.form['age'])
 
-@app.route('/usuario/<nombre>')
-def usuario(nombre):
-    return render_template('index.html', nombre=nombre)
+        return render_template(
+            'result.html',
+            age=age
+        )
+
+    return render_template('form.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
